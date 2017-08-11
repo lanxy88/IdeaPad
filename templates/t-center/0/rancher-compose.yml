@@ -3,8 +3,9 @@
   version: "v0.1"
   description: "RegisterCenter"
   questions:
-    - variable: "reg_server"
-      label: "Register center Address"
-      description: "Register center Address"
-      type: "string"
+    - variable: "exp_port"
+      label: "Port"
+      description: "Port"
+      default: 8001
+      type: "int"
       required: true

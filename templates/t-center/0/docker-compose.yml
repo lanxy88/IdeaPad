@@ -3,5 +3,5 @@ micros-center:
   volumes:
     - /mnt
   ports:
-    - "8001:8000"
+    - ${exp_port}:8000
 
