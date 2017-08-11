@@ -4,7 +4,7 @@
   description: "RegisterCenter"
   questions:
     - variable: "reg_server"
-      label: "注册中心地址"
-      description: "注册中心地址"
+      label: "Register center Address"
+      description: "Register center Address"
       type: "string"
       required: true
