@@ -1,7 +1,9 @@
-micros-center:
-  image: lanxy88/app-center:v1
-  volumes:
-    - /mnt
-  ports:
-    - ${exp_port}:8000
+version: '2'
+services:
+  micros-center:
+    image: lanxy88/app-center:v1
+    volumes:
+      - /mnt
+    ports:
+      - ${exp_port}:8000
 
