@@ -1,5 +1,5 @@
-name: Elasticsearch Cluster 5.5.1
+name: Lanxy88 Register Center
 description: |
-  Elasticsearch, you know for search!
-version: 5.5.1-rancher1
-category: ELK
+  MicroService Register Center
+version: 0.1
+category: GTMAP

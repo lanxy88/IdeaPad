@@ -1,20 +1,10 @@
 .catalog:
-  name: "REX-Ray"
-  version: "v0.3.2"
-  description: "REX-Ray persistent storage"
+  name: "RegisterCenter"
+  version: "v0.1"
+  description: "RegisterCenter"
   questions:
-    - variable: "SCALEIO_SYSTEM_ID"
-      label: "ScaleIO System ID"
-      description: "ScaleIO System ID"
-      type: "string"
-      required: true
-    - variable: "SCALEIO_STACK_NAME"
-      label: "ScaleIO Stack Name"
-      description: "The name of the stack that is running ScaleIO"
-      type: "string"
-      required: true
-    - variable: "SCALEIO_MDM_IP"
-      label: "ScaleIO Primary MDM IP address"
-      description: "The managed network IP addr of the primary mdm that is running ScaleIO"
+    - variable: "reg_server"
+      label: "注册中心地址"
+      description: "注册中心地址"
       type: "string"
       required: true
