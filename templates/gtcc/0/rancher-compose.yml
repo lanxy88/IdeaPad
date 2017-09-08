@@ -1,22 +1,22 @@
-.catalog:
+ï»¿.catalog:
   name: "GTCC"
   version: "v0.1"
   description: "GTCC"
   questions:
     - variable: "app_center"
-      label: "×¢²áÖĞĞÄµØÖ·"
+      label: "æ³¨å†Œä¸­å¿ƒåœ°å€"
       description: "eureka address"
       default: "http://center:8000/eureka/"
       type: "string"
       required: true
     - variable: "rabbit_mq"
-      label: "RabbitMQµØÖ·"
+      label: "RabbitMQåœ°å€"
       description: "rabbitmq address"
       default: "10.1.1.157"
       type: "string"
       required: true
     - variable: "app_zipkin_es"
-      label: "Elasticserch µØÖ·"
+      label: "Elasticserch åœ°å€"
       description: "elasticsearch address"
       default: "http://10.1.1.147:9200/"
       type: "string"

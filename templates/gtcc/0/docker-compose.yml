@@ -1,4 +1,4 @@
-version: '2'
+﻿version: '2'
 services:
   center:
     image: "registry.cn-hangzhou.aliyuncs.com/lanxy88/center:1.0-SNAPSHOT"
