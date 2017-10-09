@@ -1,0 +1,83 @@
+﻿version: '2'
+services:
+  center:
+    image: "registry.cn-hangzhou.aliyuncs.com/lanxy88/center:1.0-SNAPSHOT"
+    environment:
+      APP_CENTER: ${app_center}
+      EUREKA_SERVER_ENABLESELFPRESERVATION: true
+    ports:
+      - "8000:8000"
+    volumes:
+      - "/app/center/1.0-SNAPSHOT"
+  account:
+    image: "registry.cn-hangzhou.aliyuncs.com/lanxy88/account:1.0-SNAPSHOT"
+    networks:
+      - gtmap_net
+    environment:
+      APP_CENTER: ${app_center}
+      SPRING_RABBITMQ_HOST: ${rabbit_mq}
+    ports:
+      - "8888:8888"
+  collector:
+    image: "registry.cn-hangzhou.aliyuncs.com/lanxy88/collector:1.0-SNAPSHOT"
+    networks:
+      - gtmap_net
+    environment:
+      APP_CENTER: ${app_center}
+      APP_ZIPKINES: ${app_zipkin_es}
+      SPRING_RABBITMQ_HOST: ${rabbit_mq}
+    ports:
+      - "8003:8003"
+  resource:
+    image: "registry.cn-hangzhou.aliyuncs.com/lanxy88/resource:1.0-SNAPSHOT"
+    environment:
+      APP_CENTER: ${app_center}
+      SPRING_RABBITMQ_HOST: ${rabbit_mq}
+#      SPRING_RABBITMQ_PORT: 5672
+#      SPRING_RABBITMQ_USERNAME: guest
+#      SPRING_RABBITMQ_PASSWORD: guest
+    ports:
+      - "9001:9001"
+    volumes:
+      - "/app/resource/1.0-SNAPSHOT"
+  portal:
+    image: "registry.cn-hangzhou.aliyuncs.com/lanxy88/portal:1.0-SNAPSHOT"
+    environment:
+      APP_CENTER: ${app_center}
+      SPRING_RABBITMQ_HOST: ${rabbit_mq}
+    ports:
+      - "9002:9002"
+    volumes:
+      - "/app/portal/1.0-SNAPSHOT"
+  empty:
+    image: "registry.cn-hangzhou.aliyuncs.com/lanxy88/empty:1.0-SNAPSHOT"
+    environment:
+      APP_CENTER: ${app_center}
+      SPRING_RABBITMQ_HOST: ${rabbit_mq}
+    ports:
+     - "9000:9000"
+    volumes:
+     - "/app/empty/1.0-SNAPSHOT"
+  admin:
+    image: "registry.cn-hangzhou.aliyuncs.com/lanxy88/admin:1.0-SNAPSHOT"
+    environment:
+      APP_CENTER: ${app_center}
+      APP_ZIPKINES: ${app_zipkin_es}
+      SPRING_RABBITMQ_HOST: ${rabbit_mq}
+    ports:
+     - "8002:8002"
+    volumes:
+     - "/app/admin/1.0-SNAPSHOT"
+  gateway:
+    image: "registry.cn-hangzhou.aliyuncs.com/lanxy88/gateway:1.0-SNAPSHOT"
+    environment:
+      APP_CENTER: ${app_center}
+      SPRING_RABBITMQ_HOST: ${rabbit_mq}
+    ports:
+      - "9999:9999"
+    volumes:
+      - "/app/gateway/1.0-SNAPSHOT"
+
+networks:
+  default:
+    driver: overlay
