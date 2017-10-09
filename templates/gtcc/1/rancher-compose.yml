@@ -1,6 +1,6 @@
 ﻿.catalog:
   name: "GTCC"
-  version: "v0.1"
+  version: "v0.2"
   description: "GTCC"
   questions:
     - variable: "app_center"
